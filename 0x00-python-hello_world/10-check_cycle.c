@@ -8,9 +8,9 @@
  * Return: If there is no cycle - 0.
  *         If there is a cycle - 1.
  */
-int check_cycle(intList *myList)
+int check_cycle(listint_t *myList)
 {
-	intList *nairobi, *mombasa;
+	listint_t *nairobi, *mombasa;
 
 	if (myList == NULL || myList->next == NULL)
 		return (0);
