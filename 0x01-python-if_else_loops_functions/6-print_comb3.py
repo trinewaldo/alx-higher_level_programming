@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-for i in range(1, 10):
-    for j in range(i+1, 10):
-        print('{}{}, '.format(i, j), end='')
-print('9{}'.format(0))
-
+for k in range (0, 9):
+    for l in range(k + 1, 10):
+        if k == 8 and l == 9:
+            print("{}{}".format(k, l))
+        else:
+            print("{}{}".format(k, l), end=", ")
