@@ -1,31 +1,25 @@
-#include <stdlib.h>
 #include "lists.h"
 
 /**
- * check_cycle - Checks if a singly-linked myList contains a cycle.
- * @myList: A singly-linked myList.
+ * check_cycle - main function
+ * @list: param 1
  *
- * Return: If there is no cycle - 0.
- *         If there is a cycle - 1.
+ * Return: 1 on success , 0 on failure
  */
-int check_cycle(listint_t *myList)
+int check_cycle(listint_t *list)
 {
-	listint_t *nairobi, *mombasa;
+	listint_t *a = list;
+	listint_t *b = list;
 
-	if (myList == NULL || myList->next == NULL)
+	if (!list)
 		return (0);
 
-	nairobi = myList->next;
-	mombasa = myList->next->next;
-
-	while (nairobi && mombasa && mombasa->next)
+	while (a && b && b->next)
 	{
-		if (nairobi == mombasa)
-			return (1);
-
-		nairobi = nairobi->next;
-		mombasa = mombasa->next->next;
+		a = a->next;
+		b = b->next->next;
+		if (a == b)
+		return (1);
 	}
-
 	return (0);
 }
