@@ -1,15 +1,2 @@
 #!/bin/bash
-
-# Get the Python code from the environment variable
-python_code="$PYCODE"
-
-# Write the Python code to a temporary file
-tmp_file=$(mktemp)
-echo "$python_code" > $tmp_file
-
-# Run the Python code
-python $tmp_file
-
-# Clean up the temporary file
-rm $tmp_file
-
+python3 -c "$PYCODE"
